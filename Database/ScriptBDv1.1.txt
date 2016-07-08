@@ -1,0 +1,55 @@
+/*==============================================================*/
+/* DBMS name:      MySQL 5.0                                    */
+/* Created on:     29/06/2016 23:12:58                          */
+/*==============================================================*/
+create database dulssinidb;
+use dulssinidb;
+
+
+/*==============================================================*/
+/* Table: CLIENTE                                               */
+/*==============================================================*/
+create table CLIENTE
+(
+   ID_CLIENTE           char(10) not null,
+   ID_TARJETA           char(10),
+   NOMBRE               char(20),
+   APELLIDO             char(20),
+   CORREO               char(20),
+   CEDULA               char(10),
+   CODHUELLA            char(20),
+   primary key (ID_CLIENTE)
+);
+
+/*==============================================================*/
+/* Table: TARJETA                                               */
+/*==============================================================*/
+create table TARJETA
+(
+   ID_TARJETA           char(10) not null,
+   ID_CLIENTE           char(10),
+   TOTAL                int,
+   CONSUMIDOS           int,
+   DISPONIBLES          int,
+   FECHA_CONSUMO        date,
+   primary key (ID_TARJETA)
+);
+
+/*==============================================================*/
+/* Table: USUARIOS                                              */
+/*==============================================================*/
+create table USUARIOS
+(
+   ID_USUARIO           char(10) not null,
+   PERFIL               char(15),
+   USUARIO              char(15),
+   CONTRASENA           char(10),
+   primary key (ID_USUARIO)
+);
+
+alter table CLIENTE add constraint FK_CLIENTE_TARJETA foreign key (ID_TARJETA)
+      references TARJETA (ID_TARJETA) on delete restrict on update restrict;
+
+alter table TARJETA add constraint FK_CLIENTE_TARJETA2 foreign key (ID_CLIENTE)
+      references CLIENTE (ID_CLIENTE) on delete restrict on update restrict;
+
