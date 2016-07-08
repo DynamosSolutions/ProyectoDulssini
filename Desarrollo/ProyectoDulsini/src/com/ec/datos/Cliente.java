@@ -14,7 +14,10 @@ public class Cliente {
     private String apellido;
     private String cedula;
     private String email;
+    private String huella;
     //metodos getter
+
+   
 
     public String getNombre() {
         return nombre;
@@ -30,6 +33,10 @@ public class Cliente {
 
     public String getEmail() {
         return email;
+    }
+    
+     public String getHuella() {
+        return huella;
     }
     
     //metodos setter
@@ -49,14 +56,22 @@ public class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public void setHuella(String huella) {
+        this.huella = huella;
+    }
+    
     //metodo constructor
 
-    public Cliente(String nombre, String apellido, String cedula, String email) {
+    public Cliente(String nombre, String apellido, String cedula, String email, String huella) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
         this.email = email;
+        this.huella = huella;
     }
+
+  
 
     @Override
     public String toString() {

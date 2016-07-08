@@ -17,8 +17,8 @@ public class ProyectoDulsiniV01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Cliente objCliente = new Cliente("pepe", "cadena", "1720978822","pepenarco@hotmail.com");
-        objCliente.toString();
+//        Cliente objCliente = new Cliente("pepe", "cadena", "1720978822","pepenarco@hotmail.com");
+//        objCliente.toString();
 
     }
     
